@@ -88,6 +88,7 @@ mod pimlico;
 mod pokt;
 mod publicnode;
 mod quicknode;
+mod redbelly;
 mod solscan;
 mod syndica;
 pub mod tenderly;
@@ -122,6 +123,7 @@ pub use {
     pokt::PoktProvider,
     publicnode::PublicnodeProvider,
     quicknode::QuicknodeProvider,
+    redbelly::RedbellyProvider,
     solscan::SolScanProvider,
     syndica::SyndicaProvider,
     tenderly::TenderlyProvider,
@@ -701,6 +703,7 @@ pub enum ProviderKind {
     Allnodes,
     Meld,
     Monad,
+    Redbelly
 }
 
 impl Display for ProviderKind {
@@ -740,6 +743,7 @@ impl Display for ProviderKind {
                 ProviderKind::Allnodes => "Allnodes",
                 ProviderKind::Meld => "Meld",
                 ProviderKind::Monad => "Monad",
+                ProviderKind::Redbelly => "Redbelly",
             }
         )
     }
@@ -780,6 +784,7 @@ impl ProviderKind {
             "Allnodes" => Some(Self::Allnodes),
             "Meld" => Some(Self::Meld),
             "Monad" => Some(Self::Monad),
+            "Redbelly" => Some(Self::Redbelly),
             _ => None,
         }
     }
